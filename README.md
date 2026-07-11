@@ -23,8 +23,9 @@ A production-ready URL Shortener built from scratch using Java and Spring Boot. 
 
 ## 🌐 Live Demo
 
-> Currently running on localhost:8081
-> Live deployment link will be added after Railway deployment
+> 🚧 Currently running on localhost:8081
+> 
+> 🔗 **After Deployment:** [Live Link will be added here after Railway deployment]
 
 ## 📡 API Endpoints
 
@@ -52,4 +53,31 @@ A production-ready URL Shortener built from scratch using Java and Spring Boot. 
 
 ### Steps
 
-1. Clone the repository
+**1. Clone the repository**
+
+    git clone https://github.com/CodeHars12/url-shortener-website.git
+
+**2. Navigate to project**
+
+    cd url-shortener-website
+
+**3. Configure MySQL in application.properties**
+
+    spring.datasource.url=jdbc:mysql://localhost:3306/urlshortener
+    spring.datasource.username=root
+    spring.datasource.password=yourpassword
+    server.port=8081
+
+**4. Run the application**
+
+    mvn spring-boot:run
+
+**5. Open in browser**
+
+    http://localhost:8081
+
+## 👨‍💻 Author
+
+**Harsh Bardhan Kumar**
+GitHub: [@CodeHars12](https://github.com/CodeHars12)
+Email: harshbardhankumar10@gmail.com
