@@ -1,83 +1,202 @@
-# 🔗 URL Shortener - Spring Boot
+🌐 Live Demo: https://url-shortener-website-ztwx.onrender.com
 
-A production-ready URL Shortener built from scratch using Java and Spring Boot. This project covers the complete backend flow — from API design to database interactions.
+⭐ GitHub Repository: https://github.com/CodeHars12/url-shortener-website
 
-## 🚀 Features
+# 🔗 URL Shortener
 
-- Shorten long URLs into compact, shareable links
-- Instant redirection from short URL to original URL
-- Collision-free unique short code generation
-- RESTful APIs with proper HTTP status codes
-- Persistent storage using MySQL database
+A production-ready URL Shortener application built using Java, Spring Boot, MySQL, Thymeleaf, and Docker. This application allows users to convert long URLs into short, shareable links and redirect instantly to the original destination.
+
+## 🚀 Live Demo
+
+🌐 Application URL
+
+https://url-shortener-website-ztwx.onrender.com
+
+Try it now:
+
+https://url-shortener-website-ztwx.onrender.com
+
+---
+
+## ✨ Features
+
+- Convert long URLs into short URLs
+- Instant redirection using generated short codes
+- Unique short code generation
+- Persistent storage with MySQL
+- Clean and responsive UI using Thymeleaf
+- RESTful backend architecture
 - Input validation and error handling
+- Dockerized deployment
+- Hosted on Render Cloud Platform
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Java 21** — Core programming language
-- **Spring Boot 4.0.1** — Backend framework
-- **Spring MVC** — REST API handling
-- **Hibernate / JPA** — ORM for database interaction
-- **Thymeleaf** — Frontend templating engine
-- **MySQL** — Relational database
-- **Maven** — Build tool
+### Backend
+- Java 21
+- Spring Boot 4.0.1
+- Spring MVC
+- Spring Data JPA (Hibernate)
 
-## 🌐 Live Demo
+### Frontend
+- HTML5
+- CSS3
+- Thymeleaf
 
-> 🚧 Currently running on localhost:8081
-> 
-> 🔗 **After Deployment:** [Live Link will be added here after Railway deployment]
+### Database
+- MySQL
+
+### Build & Deployment
+- Maven
+- Docker
+- Render
+
+---
+
+## 📸 Application Workflow
+
+1. User enters a long URL.
+2. Application generates a unique short code.
+3. URL mapping is stored in MySQL database.
+4. A shortened URL is returned to the user.
+5. When the short URL is accessed, the application redirects to the original URL.
+
+---
 
 ## 📡 API Endpoints
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/shorten` | Generate a short URL |
+|----------|----------|----------|
+| POST | `/shorten` | Generate a short URL |
 | GET | `/{shortCode}` | Redirect to original URL |
 | GET | `/api/all` | Get all shortened URLs |
-| DELETE | `/api/{shortCode}` | Delete a short URL |
+| DELETE | `/api/{shortCode}` | Delete a shortened URL |
 
-## 💡 How It Works
+---
 
-1. User sends a long URL via POST request
-2. System generates a unique 6-character short code
-3. Mapping is saved in MySQL database
-4. When short URL is accessed, system redirects to original URL
+## 🏗️ Project Architecture
 
-## ⚙️ How to Run Locally
+```
+Client
+   │
+   ▼
+Thymeleaf UI
+   │
+   ▼
+Spring MVC Controllers
+   │
+   ▼
+Service Layer
+   │
+   ▼
+Spring Data JPA
+   │
+   ▼
+MySQL Database
+```
+
+---
+
+## ⚙️ Run Locally
 
 ### Prerequisites
 
 - Java 21+
-- MySQL installed and running
 - Maven 3.9+
+- MySQL Server
 
-### Steps
+### Clone Repository
 
-**1. Clone the repository**
+```bash
+git clone https://github.com/CodeHars12/url-shortener-website.git
+cd url-shortener-website
+```
 
-    git clone https://github.com/CodeHars12/url-shortener-website.git
+### Configure Database
 
-**2. Navigate to project**
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/urlshortener
+spring.datasource.username=root
+spring.datasource.password=yourpassword
 
-    cd url-shortener-website
+spring.jpa.hibernate.ddl-auto=update
+```
 
-**3. Configure MySQL in application.properties**
+### Build Project
 
-    spring.datasource.url=jdbc:mysql://localhost:3306/urlshortener
-    spring.datasource.username=root
-    spring.datasource.password=yourpassword
-    server.port=8081
+```bash
+mvn clean install
+```
 
-**4. Run the application**
+### Run Application
 
-    mvn spring-boot:run
+```bash
+mvn spring-boot:run
+```
 
-**5. Open in browser**
+### Open Browser
 
-    http://localhost:8081
+```text
+http://localhost:8080
+```
+
+---
+
+## 📂 Database
+
+The application stores:
+
+- ID
+- Original URL
+- Short Code
+
+using MySQL and Hibernate ORM.
+
+---
+
+## 🐳 Docker Deployment
+
+Build Docker Image
+
+```bash
+docker build -t url-shortener .
+```
+
+Run Container
+
+```bash
+docker run -p 8080:8080 url-shortener
+```
+
+---
+
+## 📁 Repository
+
+GitHub Repository:
+
+https://github.com/CodeHars12/url-shortener-website
+
+---
 
 ## 👨‍💻 Author
 
 **Harsh Bardhan Kumar**
-GitHub: [@CodeHars12](https://github.com/CodeHars12)
-Email: harshbardhankumar10@gmail.com
+
+GitHub:
+https://github.com/CodeHars12
+
+LinkedIn:
+https://www.linkedin.com/in/harsh-bardhan-kumar/
+
+Email:
+harshbardhankumar10@gmail.com
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project, please consider giving it a ⭐ on GitHub.
+
+Happy Coding! 🚀
